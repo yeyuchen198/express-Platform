@@ -10,3 +10,9 @@
 "https://www.{default}/":
     type: redirect
     to: "https://{default}/"
+
+"https://{default}/login":
+    type: upstream
+    upstream: "ws-app:http"
+    cache:
+        enabled: false
