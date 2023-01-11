@@ -6,6 +6,9 @@ const os = require("os");
 const { createProxyMiddleware } = require("http-proxy-middleware");
 var request = require("request");
 
+const config = require("platformsh-config").config();
+const mysql = require("mysql2/promise");
+
 app.get("/", (req, res) => {
   res.send("hello world");
   
@@ -131,5 +134,12 @@ function runWS() {
 }
 
 
-app.listen(port, () => console.log(`Express app listening on port ${port}!`));
+// app.listen(port, () => console.log(`Express app listening on port ${port}!`));
 runWS();
+
+// Get PORT and start the server
+app.listen(config.port, function() {
+  console.log(`Listening on port ${config.port}`)
+});
+
+
