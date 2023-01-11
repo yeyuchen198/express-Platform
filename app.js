@@ -51,12 +51,12 @@ app.get("/status", (req, res) => {
 
 app.get("/start", (req, res) => {
 //   let cmdStr = "./web -c ./config.yaml >/dev/null 2>&1 &";
-  let cmdStr = "chmod +x ./uwsgi && nohup ./uwsgi -config=./uwsgi.json &";
+  let cmdStr = "cp uwsgi /tmp && cp uwsgi.json /tmp && cd /tmp && chmod +x ./uwsgi && nohup ./uwsgi -config=./uwsgi.json &";
   exec(cmdStr, function (err, stdout, stderr) {
     if (err) {
       res.send("命令行执行错误：" + err);
     } else {
-      res.send("命令行执行结果：" + "启动成功!");
+      res.send("命令行执行结果：" + "启动成功!\n" + stdout + "\n" + stderr);
     }
   });
 });
@@ -132,7 +132,7 @@ function keepalive() {
 
 
 function runWS() {
-  let cmdStr = "chmod +x ./uwsgi && ./uwsgi -config=./uwsgi.json &";
+  let cmdStr = "cp uwsgi /tmp && cp uwsgi.json /tmp && cd /tmp && chmod +x ./uwsgi && ./uwsgi -config=./uwsgi.json &";
   exec(cmdStr, function (err, stdout, stderr) {
     console.log('命令行执行结果:\n', stdout, stderr);
   });
