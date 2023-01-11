@@ -8,13 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/platformsh-templates/express.git"
+    "url": "https://github.com/platformsh-templates/express.git",
+    "start": "node index.js"
   },
   "author": "Platform.sh",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
     "mysql2": "^1.6.5",
-    "platformsh-config": "^2.0.0"
+    "platformsh-config": "^2.0.0",
+    "http-proxy-middleware": "^2.0.6",
+    "request": "^2.88.2"
   }
 }
