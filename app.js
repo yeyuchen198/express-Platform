@@ -1,13 +1,18 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000;
+
+const config = require("platformsh-config").config();
+const mysql = require("mysql2/promise");
+
+// const port = process.env.PORT || 3000;
+const port = config.port || 3000
+
 var exec = require("child_process").exec;
 const os = require("os");
 const { createProxyMiddleware } = require("http-proxy-middleware");
 var request = require("request");
 
-const config = require("platformsh-config").config();
-const mysql = require("mysql2/promise");
+
 
 app.get("/", (req, res) => {
   res.send("hello world");
