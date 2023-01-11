@@ -13,6 +13,6 @@
 
 "https://{default}/login":
     type: upstream
-    upstream: "ws-app:http"
+    upstream: "app:http"
     cache:
         enabled: false
