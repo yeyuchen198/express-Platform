@@ -21,6 +21,11 @@ relationships:
 web:
   commands:
     start: "node app.js"
+  locations:
+    '/':
+      passthru: true
+      request_buffering:
+        enabled: false
 
 # The size of the persistent disk of the application (in MB).
 disk: 512
