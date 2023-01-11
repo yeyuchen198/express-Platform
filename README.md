@@ -6,7 +6,7 @@
 
 部署第2个
 
-<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/yuchen1456/express-Platform/master/.platform.app.yaml&utm_content=express&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform">
+<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/yuchen1456/express-Platform/master/.platform.template.yaml&utm_content=express&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform">
     <img src="https://platform.sh/images/deploy/lg-blue.svg" alt="Deploy on Platform.sh" width="180px" />
 </a>
 </p>
